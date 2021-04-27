@@ -11,7 +11,9 @@ import java.util.Date;
 import java.util.List;
 
 @Entity
-@NamedQueries({})
+@NamedQueries({
+        @NamedQuery(name = "Movie.findAll", query = "select m from Movie as m")
+})
 @Table(name = "MOVIE")
 @Getter
 @Setter

@@ -7,8 +7,8 @@
     <context id="MovieRentalDB" targetRuntime="MyBatis3Simple">
         <jdbcConnection driverClass="org.h2.Driver"
                         connectionURL="jdbc:h2:~/h2database/MovieRentalDB;AUTO_SERVER=TRUE"
-                        userId="pirmas"
-                        password="pirmas">
+                        userId="sa"
+                        password="sa">
         </jdbcConnection>
 
         <javaModelGenerator targetPackage="com.example.MovieRentalLab.mybatis.model" targetProject="MAVEN" />

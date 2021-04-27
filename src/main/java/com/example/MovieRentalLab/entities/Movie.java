@@ -36,5 +36,5 @@ public class Movie implements Serializable {
     private Date availabilityEndDate;
 
     @ManyToMany(mappedBy = "movies")
-    private List<Client> clientsList;
+    private List<Client> clients;
 }

@@ -32,7 +32,7 @@ public class Client implements Serializable {
     private String email;
 
     @OneToMany(mappedBy = "client")
-    private List<CinemaCommunityAward> awards;
+    private List<Award> awards;
 
     @ManyToMany
     private List<Movie> movies;

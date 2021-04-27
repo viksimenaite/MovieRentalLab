@@ -14,7 +14,7 @@ import java.io.Serializable;
 @Table(name = "AWARD")
 @Getter
 @Setter
-public class CinemaCommunityAward implements Serializable {
+public class Award implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;

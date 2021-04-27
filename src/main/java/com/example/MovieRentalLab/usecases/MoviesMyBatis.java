@@ -29,7 +29,7 @@ public class MoviesMyBatis {
     @Transactional
     public String createMovie() {
         moviesDAO.insert(movieToCreate);
-        return "index?faces-redirect=true";
+        return "movies?faces-redirect=true";
     }
 
     private void loadAllProjects() {

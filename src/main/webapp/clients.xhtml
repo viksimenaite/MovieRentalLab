@@ -12,7 +12,7 @@
     <ol>
         <ui:repeat value="#{movieAudience.movie.clients}" var="client">
             <li>
-                <h:link value="#{client.username} #{client.email}" />
+                <h:link value="#{client.username} #{client.email}" outcome="clientAwards?clientId=#{client.id}" />
             </li>
         </ui:repeat>
     </ol>

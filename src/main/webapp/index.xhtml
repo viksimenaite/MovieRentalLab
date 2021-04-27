@@ -12,12 +12,13 @@
    <h2>Movies:</h2>
    <ol>
       <ui:repeat value="#{movies.allMovies}" var="movie">
-         <li><h:link value="#{movie.name}" outcome="movies?movieId=#{movie.id}}" /></li>
+         <li><h:link value="#{movie.name}" outcome="clients?movieId=#{movie.id}}" /></li>
       </ui:repeat>
    </ol>
    <h:form>
       <h:inputText value="#{movies.movieToCreate.name}" required="true" />
       <h:commandButton value="Add new movie" action="#{movies.createMovie}" />
    </h:form>
+   <h:link outcome="myBatis/movies" value="MyBatis implementation"/>
 </h:body>
 </html>

@@ -35,5 +35,5 @@ public class Client implements Serializable {
     private List<CinemaCommunityAward> awards;
 
     @ManyToMany
-    private List<Movie> rentedMovies;
+    private List<Movie> movies;
 }

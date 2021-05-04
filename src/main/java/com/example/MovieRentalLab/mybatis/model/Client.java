@@ -142,6 +142,10 @@ public class Client {
         this.username = username;
     }
 
+    public void setMovies(List<Movie> movies) {
+        this.movies = movies;
+    }
+
     @Getter @Setter
     private List<Award> awards;
 

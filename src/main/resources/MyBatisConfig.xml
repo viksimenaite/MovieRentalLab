@@ -6,17 +6,21 @@
     <typeAliases>
         <typeAlias type="com.example.MovieRentalLab.mybatis.model.Client" alias="Client"/>
         <typeAlias type="com.example.MovieRentalLab.mybatis.model.Movie" alias="Movie"/>
+        <typeAlias type="com.example.MovieRentalLab.mybatis.model.Award" alias="Award"/>
+        <typeAlias type="com.example.MovieRentalLab.mybatis.model.ClientMovie" alias="ClientMovie"/>
     </typeAliases>
     <environments default="development">
         <environment id="development">
             <transactionManager type="MANAGED"/>
             <dataSource type="JNDI">
-                <property name="data_source" value="ClientsDataSource"/>
+                <property name="data_source" value="MoviesDataSource"/>
             </dataSource>
         </environment>
     </environments>
     <mappers>
         <mapper resource="mybatis.xml/ClientMapper.xml"/>
         <mapper resource="mybatis.xml/MovieMapper.xml"/>
+        <mapper resource="mybatis.xml/AwardMapper.xml"/>
+        <mapper resource="mybatis.xml/ClientMovieMapper.xml"/>
     </mappers>
 </configuration>

@@ -41,11 +41,11 @@ public class MovieAudience implements Serializable {
     // FR[3.1.2]
     // FR[3.5]
     @Transactional
-    public String createMovie() {
+    public String createClient() {
         List<Movie> movies = new ArrayList<>();
         movies.add(this.movie);
         clientToCreate.setMovies(movies);
         clientsDAO.persist(this.clientToCreate);
-        return "users?faces-redirect=true&projectId=" + this.movie.getId();
+        return "clients?faces-redirect=true&movieId=" + this.movie.getId();
     }
 }

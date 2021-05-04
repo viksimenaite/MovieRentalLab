@@ -11,7 +11,7 @@
    <h2>Client <b>#{clientAwards.client.username}</b>:</h2>
    <ol>
       <ui:repeat value="#{clientAwards.client.awards}" var="award">
-         <li><h:link value="#{award.officialName}"/></li>
+         <li><h:outputText value="#{award.officialName}"/></li>
       </ui:repeat>
    </ol>
    <h:form>

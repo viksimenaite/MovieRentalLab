@@ -8,19 +8,19 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 <h:head/>
 <h:body>
-   <h2>Clients watching <b>#{movieAudience.movie.name}</b>:</h2>
+   <h2>Clients watching <b>#{movieAudienceMyBatis.movie.name}</b>:</h2>
    <ol>
-      <ui:repeat value="#{movieAudience.movie.clients}" var="user">
+      <ui:repeat value="#{movieAudienceMyBatis.movie.clients}" var="client">
          <li>
             <h:link value="#{client.username} #{client.email}" />
          </li>
       </ui:repeat>
    </ol>
    <h:form>
-      <h:inputText a:placeholder="Username" value="#{movieAudience.clientToCreate.username}" required="true" />
-      <h:inputText a:placeholder="Email" value="#{movieAudience.clientToCreate.email}" required="true" />
-      <h:commandButton value="Add a new client to watch this movie" action="#{movieAudience.createClient}">
-         <f:param name="movieId" value="#{movieAudience.movie.id}"/>
+      <h:inputText a:placeholder="Username" value="#{movieAudienceMyBatis.clientToCreate.username}" required="true" />
+      <h:inputText a:placeholder="Email" value="#{movieAudienceMyBatis.clientToCreate.email}" required="true" />
+      <h:commandButton value="Add a new client to watch this movie" action="#{movieAudienceMyBatis.createClient}">
+         <f:param name="movieId" value="#{movieAudienceMyBatis.movie.id}"/>
       </h:commandButton>
    </h:form>
    <h:link outcome="movies" value="Back to Movies"/>

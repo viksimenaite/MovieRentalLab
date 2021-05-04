@@ -1,6 +1,7 @@
 package com.example.MovieRentalLab.usecases;
 
-import com.example.MovieRentalLab.entities.Movie;
+import com.example.MovieRentalLab.mybatis.dao.MovieMapper;
+import com.example.MovieRentalLab.mybatis.model.Movie;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -12,8 +13,8 @@ import java.util.List;
 
 @Model
 public class MoviesMyBatis {
-/*    @Inject
-    private MovieMapper moviesDAO;
+    @Inject
+    private MovieMapper movieMapper;
 
     @Getter
     private List<Movie> allMovies;
@@ -28,11 +29,11 @@ public class MoviesMyBatis {
 
     @Transactional
     public String createMovie() {
-        moviesDAO.insert(movieToCreate);
+        movieMapper.insert(movieToCreate);
         return "movies?faces-redirect=true";
     }
 
-    private void loadAllProjects() {
-        this.allMovies = moviesDAO.selectAll();
-    }*/
+    private void loadAllMovies() {
+        this.allMovies = movieMapper.selectAll();
+    }
 }

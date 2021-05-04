@@ -10,9 +10,9 @@
 <h:body>
    <h2>Clients watching <b>#{movieAudienceMyBatis.movie.name}</b>:</h2>
    <ol>
-      <ui:repeat value="#{movieAudienceMyBatis.movie.clients}" var="client">
+      <ui:repeat value="#{movieAudience.movie.clients}" var="client">
          <li>
-            <h:link value="#{client.username} #{client.email}" />
+            <h:link value="#{client.username} #{client.email}"/>
          </li>
       </ui:repeat>
    </ol>

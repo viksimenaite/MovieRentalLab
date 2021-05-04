@@ -7,6 +7,7 @@ import lombok.Setter;
 import javax.persistence.*;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -36,5 +37,5 @@ public class Movie implements Serializable {
     private Date availabilityEndDate;
 
     @ManyToMany(mappedBy = "movies")
-    private List<Client> clients;
+    private List<Client> clients = new ArrayList<>();
 }

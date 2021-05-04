@@ -175,4 +175,6 @@ public class Movie {
 
     @Getter @Setter
     private List<Client> clients;
+
+    public List<Client> getClients(){ return clients;}
 }

@@ -38,8 +38,6 @@ public class MovieAudience implements Serializable {
         this.movie = moviesDAO.findOne(movieId);
     }
 
-    // FR[3.1.2]
-    // FR[3.5]
     @Transactional
     public String createClient() {
         List<Movie> movies = new ArrayList<>();

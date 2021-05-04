@@ -21,8 +21,11 @@
       </h:commandButton>
    </h:form>
    <h:form>
-      <h:inputText a:placeholder="Current movie ID" value="#{clientAwards.movieIdToRent}" required="true" />
-      <h:commandButton value="Rent current movie to the client" action="#{clientAwards.rentMovie}">
+      <h:inputText a:placeholder="Movie ID to rent" value="#{clientAwards.movieIdToRent}" required="true" />
+      <h:selectOneMenu a:placeholder="Movies iD" value="#{clientAwards.movieIdToRent}">
+         <f:selectItems value="#{movies.allMovies}" var="movie" itemValue="#{movie.id}" itemLabel="#{movie.name}" />
+   </h:selectOneMenu>
+      <h:commandButton value="Rent movie to the client" action="#{clientAwards.rentMovie}">
          <f:param name="clientId" value="#{clientAwards.client.id}"/>
       </h:commandButton>
    </h:form>

@@ -1,6 +1,7 @@
 package com.example.MovieRentalLab.usecases;
 
 import com.example.MovieRentalLab.mybatis.dao.ClientMapper;
+import com.example.MovieRentalLab.mybatis.dao.ClientMovieMapper;
 import com.example.MovieRentalLab.mybatis.dao.MovieMapper;
 import com.example.MovieRentalLab.mybatis.model.Client;
 import com.example.MovieRentalLab.mybatis.model.Movie;
@@ -25,6 +26,9 @@ public class MovieAudienceMyBatis {
     @Inject
     private ClientMapper clientMapper;
 
+    @Inject
+    private ClientMovieMapper clientMovieMapper;
+
     @Getter
     @Setter
     private Movie movie;
@@ -38,14 +42,14 @@ public class MovieAudienceMyBatis {
         int movieId = Integer.parseInt(requestParameters.get("movieId"));
         this.movie = movieMapper.selectByPrimaryKey(movieId);
     }
-    
+
     @Transactional
     public String createClient() {
         List<Movie> movies = new ArrayList<>();
         movies.add(this.movie);
         //this.clientToCreate.setMovies(movies);
         clientMapper.insert(this.clientToCreate);
-        return "/myBatis/clients?faces-redirect=true&movieId=" + this.movie.getId();
+        return "clients?faces-redirect=true&movieId=" + this.movie.getId();
     }
 
 }

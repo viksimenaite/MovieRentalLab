@@ -32,7 +32,7 @@ public class ClientAwards {
     @Getter
     private Client client;
 
-    @Getter @Setter // FR[3.1.2]
+    @Getter @Setter
     private Award awardToCreate = new Award();
 
     @Getter @Setter
@@ -42,7 +42,7 @@ public class ClientAwards {
     public void init(){
         Map<String, String> requestParameters = FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap();
         int clientId = Integer.parseInt(requestParameters.get("clientId"));
-        client = clientsDAO.findOne(clientId);
+        this.client = clientsDAO.findOne(clientId);
     }
 
     @Transactional

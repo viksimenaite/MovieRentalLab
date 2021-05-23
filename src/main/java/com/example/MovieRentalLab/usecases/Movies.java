@@ -1,7 +1,7 @@
 package com.example.MovieRentalLab.usecases;
 
 import com.example.MovieRentalLab.entities.Movie;
-import com.example.MovieRentalLab.persistence.MoviesDAO;
+import com.example.MovieRentalLab.persistence.IMovieDAO;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -14,7 +14,7 @@ import java.util.List;
 @Model
 public class Movies {
     @Inject
-    private MoviesDAO moviesDAO;
+    private IMovieDAO moviesDAO;
 
     @Getter
     private List<Movie> allMovies;

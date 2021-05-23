@@ -38,4 +38,7 @@ public class Movie implements Serializable {
 
     @ManyToMany(mappedBy = "movies")
     private List<Client> clients = new ArrayList<>();
+
+    @Version
+    private Integer version;
 }

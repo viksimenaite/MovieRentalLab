@@ -3,6 +3,7 @@ package com.example.MovieRentalLab.usecases;
 import com.example.MovieRentalLab.entities.Client;
 import com.example.MovieRentalLab.entities.Movie;
 import com.example.MovieRentalLab.persistence.ClientsDAO;
+import com.example.MovieRentalLab.persistence.IMovieDAO;
 import com.example.MovieRentalLab.persistence.MoviesDAO;
 import lombok.Getter;
 import lombok.Setter;
@@ -20,7 +21,7 @@ import java.util.Map;
 @Model
 public class MovieAudience implements Serializable {
     @Inject
-    private MoviesDAO moviesDAO;
+    private IMovieDAO moviesDAO;
 
     @Inject
     private ClientsDAO clientsDAO;
@@ -41,9 +42,9 @@ public class MovieAudience implements Serializable {
     @Transactional
     public String createClient() {
         List<Movie> movies = new ArrayList<>();
-        movies.add(this.movie);
+        movies.add(movie);
         clientToCreate.setMovies(movies);
-        clientsDAO.persist(this.clientToCreate);
+        clientsDAO.persist(clientToCreate);
         return "clients?faces-redirect=true&movieId=" + this.movie.getId();
     }
 }

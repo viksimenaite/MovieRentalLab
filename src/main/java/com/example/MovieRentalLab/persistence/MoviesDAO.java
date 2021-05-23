@@ -3,12 +3,13 @@ package com.example.MovieRentalLab.persistence;
 import com.example.MovieRentalLab.entities.Movie;
 
 import javax.enterprise.context.ApplicationScoped;
+import javax.enterprise.inject.Default;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import java.util.List;
 
-@ApplicationScoped
-public class MoviesDAO {
+@Default
+public class MoviesDAO implements IMovieDAO{
     @Inject
     private EntityManager em;
 
@@ -27,4 +28,6 @@ public class MoviesDAO {
     public Movie update(Movie movie){
         return em.merge(movie);
     }
+
+    public void flush() { em.flush();}
 }

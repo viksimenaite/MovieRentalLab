@@ -4,4 +4,13 @@
        xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
                       http://xmlns.jcp.org/xml/ns/javaee/beans_2_0.xsd"
        bean-discovery-mode="all">
+<!--    <alternatives>-->
+<!--        <class>com.example.MovieRentalLab.persistence.TestMoviesDAO</class>-->
+<!--    </alternatives>-->
+    <interceptors>
+        <class>com.example.MovieRentalLab.interceptors.MyMethodLogger</class>
+    </interceptors>
+    <decorators>
+        <class>com.example.MovieRentalLab.usecases.decorator.ClientCreatorDecorator</class>
+    </decorators>
 </beans>

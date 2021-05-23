@@ -19,8 +19,9 @@
     <h:form>
         <h:inputText a:placeholder="Username" value="#{movieAudience.clientToCreate.username}" required="true" />
         <h:inputText a:placeholder="Email" value="#{movieAudience.clientToCreate.email}" required="true" />
-        <h:commandButton value="Add a new client to watch this movie" action="#{movieAudience.createClient}">
+        <h:commandButton value="#{clientCreation.getClientCreationStatus()}" disabled="#{clientCreation.isClientCreatorRunning()}" action="#{movieAudience.createClient}">
             <f:param name="movieId" value="#{movieAudience.movie.id}"/>
+            <f:actionListener binding="#{clientCreation.startWork()}"/>
         </h:commandButton>
     </h:form>
     <h:link outcome="index" value="Back to Movies"/>

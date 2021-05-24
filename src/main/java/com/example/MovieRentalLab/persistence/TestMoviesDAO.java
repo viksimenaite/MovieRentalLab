@@ -15,7 +15,7 @@ public class TestMoviesDAO implements IMovieDAO{
     public List<Movie> getAllMovies() {
         List<Movie> result = new ArrayList<>();
         Movie movie = new Movie();
-        movie.setId(111);
+        movie.setId(1);
         movie.setName("Movie for testing");
         movie.setGenre(MovieGenre.Action);
         result.add(movie);

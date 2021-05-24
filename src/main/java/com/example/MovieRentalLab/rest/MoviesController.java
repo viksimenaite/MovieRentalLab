@@ -6,6 +6,7 @@ import com.example.MovieRentalLab.rest.contracts.MovieDTO;
 import lombok.Getter;
 import lombok.Setter;
 
+import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.persistence.OptimisticLockException;
 import javax.transaction.Transactional;
@@ -15,8 +16,9 @@ import javax.ws.rs.core.Response;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
 
+@ApplicationScoped
+@Path("/movies")
 public class MoviesController {
 
     @Inject
@@ -55,8 +57,8 @@ public class MoviesController {
             }
             existingMovie.setName(movieData.getName());
             DateFormat format = new SimpleDateFormat("yyyy-MM-dd");
-            existingMovie.setReleaseDate(format.parse(movieData.getReleaseDate())); // TODO: FIX
-            existingMovie.setAvailabilityEndDate(format.parse(movieData.getAvailabilityEndDate())); // TODO: FIX
+            existingMovie.setReleaseDate(format.parse(movieData.getReleaseDate()));
+            existingMovie.setAvailabilityEndDate(format.parse(movieData.getAvailabilityEndDate()));
 
             moviesDAO.update(existingMovie);
             if (invokeOLE != null && invokeOLE) {

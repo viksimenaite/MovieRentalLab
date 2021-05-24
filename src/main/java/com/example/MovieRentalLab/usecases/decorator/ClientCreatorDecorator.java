@@ -7,6 +7,7 @@ import javax.inject.Inject;
 
 @Decorator
 public class ClientCreatorDecorator implements IClientCreator {
+
     @Inject
     @Delegate
     @Any

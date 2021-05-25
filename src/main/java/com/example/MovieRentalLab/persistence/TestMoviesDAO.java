@@ -14,25 +14,29 @@ public class TestMoviesDAO implements IMovieDAO{
     @Override
     public List<Movie> getAllMovies() {
         List<Movie> result = new ArrayList<>();
-        Movie movie = new Movie();
-        movie.setId(1);
-        movie.setName("Movie for testing");
-        movie.setGenre(MovieGenre.Action);
-        result.add(movie);
+        Movie movie;
+
+        for(int i=0; i<3; i++){
+            movie = new Movie();
+            movie.setId(120 + i);
+            movie.setName("Alternative movie " + i);
+            movie.setGenre(MovieGenre.Action);
+            result.add(movie);
+        }
+
         return result;
     }
 
     @Override
     public void persist(Movie movie) {
-
     }
 
     @Override
     public Movie findOne(Integer id) {
-        if (id == 100) return null;
+        if (id == 15) return null;
         Movie movie = new Movie();
         movie.setId(id);
-        movie.setName("Movie for testing");
+        movie.setName("Alternative movie!");
         movie.setGenre(MovieGenre.Action);
         return movie;
     }

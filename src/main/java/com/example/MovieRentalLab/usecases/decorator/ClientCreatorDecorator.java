@@ -17,8 +17,11 @@ public class ClientCreatorDecorator implements IClientCreator {
     public Boolean createClient() {
         try {
             clientCreator.createClient();
-            Thread.sleep(7000);
-            System.out.println("***** Decorator Thread.sleep ended. *****");
+            for(int i=0; i<5; i++){
+                Thread.sleep(1000);
+                System.out.println("************* Decorator: SLEEP *************");
+            }
+            System.out.println("******* Decorator: Thread.sleep ENDED. *******");
         } catch (InterruptedException e) {
 
         }

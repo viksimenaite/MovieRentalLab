@@ -7,8 +7,11 @@ import java.io.Serializable;
 public class ClientCreator implements Serializable, IClientCreator {
     public Boolean createClient() {
         try {
-            Thread.sleep(3000);
-            System.out.println("***** Thread.sleep ended. *****");
+            for(int i=0; i<5; i++){
+                Thread.sleep(1000);
+                System.out.println("************* SLEEP *************");
+            }
+            System.out.println("******** Thread.sleep ENDED. ********");
         } catch (InterruptedException e) {
             //handle exception
         }

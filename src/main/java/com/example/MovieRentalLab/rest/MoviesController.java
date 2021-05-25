@@ -16,6 +16,8 @@ import javax.ws.rs.core.Response;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @ApplicationScoped
 @Path("/movies")
@@ -40,6 +42,21 @@ public class MoviesController {
         if (movie.getAvailabilityEndDate() != null) movieDTO.setAvailabilityEndDate(movie.getAvailabilityEndDate().toString());
 
         return Response.ok(movieDTO).build();
+    }
+
+    @Path("/all")
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getAll() {
+        List<Movie> movies = moviesDAO.getAllMovies();
+        if (movies.isEmpty()) {
+            return Response.status(Response.Status.NOT_FOUND).build();
+        }
+        List<MovieDTO> movieDTOs = movies.stream()
+                .map(MovieDTO::fromEntity)
+                .collect(Collectors.toList());
+
+        return Response.ok(movieDTOs).build();
     }
 
     @Path("/{id}")
